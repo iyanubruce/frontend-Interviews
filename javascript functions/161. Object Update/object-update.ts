@@ -1,0 +1,7 @@
+export default function objectUpdate<T extends Record<string, unknown>>(
+  source: T,
+  path: string,
+  value: unknown,
+): T {
+  throw new Error("Not implemented!");
+}

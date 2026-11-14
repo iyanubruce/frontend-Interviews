@@ -1,0 +1,44 @@
+# Text Search
+
+**Difficulty:** Medium
+
+## Description
+
+Browsers can find specific words or phrases within a webpage by using Ctrl + F (Windows, Linux) or ⌘ + F (Mac) and entering the search term. Matches that appear are highlighted in yellow.
+
+Implement a simple version of browser in-page search that receives a string (as opposed to HTML) and **bolds** search matches.
+
+Given a content string and a query string, implement a function `textSearch` that finds all case-insensitive matches with the `query` string, wrapping the matches in `<b>...</b>` tags.
+
+## Examples
+
+```js
+textSearch('The Quick Brown Fox Jumps Over The Lazy Dog', 'fox');
+// 'The Quick Brown <b>Fox</b> Jumps Over The Lazy Dog'
+textSearch('The hardworking Dog overtakes the lazy dog', 'dog');
+// 'The hardworking <b>Dog</b> overtakes the lazy <b>dog</b>'
+```
+
+A character will not match the same query more than once, with letters appearing earlier taking priority.
+
+```js
+textSearch('aaa', 'aa');
+// '<b>aa</b>a'
+// This is because the second character cannot be used as a match again.
+```
+
+Consecutive matches should be combined into a single `<b>` tag.
+
+```js
+textSearch('aaaa', 'aa');
+// Correct: '<b>aaaa</b>'
+// Wrong: '<b>aa</b><b>aa</b>'
+```
+
+## Files
+
+| File | Contents |
+| --- | --- |
+| `text-search.ts` | Starter code |
+| `tests.ts` | Unit tests |
+| `solution.md` | Solution write-up and code |

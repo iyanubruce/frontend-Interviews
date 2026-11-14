@@ -1,0 +1,34 @@
+import { describe, expect, test } from "vitest";
+
+import fn from "./array-product-excluding-current";
+const runTestCases: any[] = [
+  {
+    input: [["numbers", [1, 2, 3]]],
+    output: [6, 3, 2],
+    explanation:
+      "Output is multiplication of all other elements except self, i.e 2*3, 1*3, 1*2",
+  },
+  {
+    input: [["numbers", [2, 0, 3]]],
+    output: [0, 6, 0],
+    explanation:
+      "Output is multiplication of all other elements except self, i.e 0*3, 2*3, 2*0",
+  },
+  {
+    input: [["numbers", [0, 0, -1, 1]]],
+    output: [0, 0, 0, 0],
+    explanation:
+      "Output is multiplication of all other elements except self, i.e 0*-1*1, 0*-1*1, 0*0*1, 0*0*-1",
+  },
+];
+
+describe("arrayProductExcludingCurrent", () => {
+  runTestCases.forEach((example: any) => {
+    test(`${example.input[0][0]} = [${example.input[0][1]}]`, () => {
+      const actual = fn(example.input[0][1]).map((num) =>
+        num === -0 ? 0 : num,
+      );
+      expect(actual).toStrictEqual(example.output);
+    });
+  });
+});

@@ -1,0 +1,43 @@
+# useFocus
+
+**Difficulty:** Easy
+
+## Description
+
+Implement a `useFocus` hook that enables focusing an element programmatically.
+
+```js
+export default function Component() {
+  const [ref, focus] = useFocus();
+
+  return (
+    <div>
+      <input ref={ref} type="text" />
+      <button onClick={focus}>Focus input</button>
+    </div>
+  );
+}
+```
+
+## Arguments
+
+Nothing.
+
+## Returns
+
+The hook returns an array with two elements:
+
+1. A ref object that will be attached to the `ref` prop of the element to focus. This has the type `RefObject<T>`, where `T` extends `HTMLElement`
+2. A function `() => void` that can be called to programmatically focus the element
+
+## Notes
+
+- Calling the function while no element is attached should do nothing.
+
+## Files
+
+| File | Contents |
+| --- | --- |
+| `use-focus.ts` | Starter code |
+| `tests.ts` | Unit tests |
+| `solution.md` | Solution write-up and code |

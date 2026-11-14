@@ -1,0 +1,53 @@
+import { describe, expect, test } from "vitest";
+
+import fn from "./intervals-minimum-meeting-rooms";
+const runTestCases: any[] = [
+  {
+    input: [["intervals", [[83, 99]]]],
+    output: 1,
+    explanation:
+      "Since there is only one meeting, only one room is required. There is no overlap, so just one room can accommodate the meeting.",
+  },
+  {
+    input: [
+      [
+        "intervals",
+        [
+          [1, 5],
+          [2, 6],
+          [8, 9],
+        ],
+      ],
+    ],
+    output: 2,
+    explanation:
+      "There are two overlapping meetings: [1, 5] and [2, 6]. To accommodate both meetings simultaneously, at least two rooms are needed. The other meeting [8, 9] do not overlap with the earlier ones, so only two rooms are required in total.",
+  },
+  {
+    input: [
+      [
+        "intervals",
+        [
+          [5, 10],
+          [10, 15],
+          [15, 20],
+        ],
+      ],
+    ],
+    output: 1,
+    explanation:
+      "The meetings are back-to-back, meaning they do not overlap. Since the end of one meeting coincides with the start of the next, only one room is sufficient to host all the meetings.",
+  },
+];
+
+describe("minMeetingRoomsNeeded", () => {
+  (runTestCases as any[]).forEach((example: any) => {
+    test(`${example.input[0][0]} = ${JSON.stringify(
+      example.input[0][1],
+      null,
+      2,
+    )}`, () => {
+      expect(fn(example.input[0][1])).toStrictEqual(example.output);
+    });
+  });
+});

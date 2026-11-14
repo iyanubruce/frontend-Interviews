@@ -1,0 +1,64 @@
+import { describe, expect, test } from "vitest";
+
+import fn from "./disjoint-intervals";
+const runTestCases: any[] = [
+  {
+    input: [
+      [
+        "intervals",
+        [
+          [1, 5],
+          [2, 3],
+          [3, 4],
+          [4, 6],
+        ],
+      ],
+    ],
+    output: 1,
+    explanation:
+      "[1,5] overlaps with multiple intervals, and removing it makes the rest non-overlapping. Since only one interval needs to be removed, the result is 1.",
+  },
+  {
+    input: [
+      [
+        "intervals",
+        [
+          [1, 15],
+          [3, 5],
+          [6, 8],
+          [8, 10],
+          [9, 11],
+        ],
+      ],
+    ],
+    output: 2,
+    explanation:
+      "[1,15] overlaps with all other intervals, and [9,11] overlaps with [8,10]. Removing these two intervals makes the rest non-overlapping. Since two intervals need to be removed, the result is 2.",
+  },
+  {
+    input: [
+      [
+        "intervals",
+        [
+          [1, 4],
+          [4, 8],
+        ],
+      ],
+    ],
+    output: 0,
+    explanation:
+      "[1,4] and [4,8] are already non-overlapping, so no intervals need to be removed. Hence, the result is 0.",
+  },
+];
+
+describe("disjointIntervals", () => {
+  runTestCases.forEach((example: any) => {
+    test(`${example.input[0][0]} = ${JSON.stringify(
+      example.input[0][1],
+      null,
+      2,
+    )}`, () => {
+      expect(fn(example.input[0][1])).toStrictEqual(example.output);
+    });
+  });
+});

@@ -1,0 +1,42 @@
+import { describe, expect, test } from "vitest";
+
+import fn from "./task-coordination";
+const runTestCases: any[] = [
+  {
+    input: [
+      ["tasks", ["A", "A", "A", "B", "B", "B"]],
+      ["k", 2],
+    ],
+    output: 8,
+    explanation:
+      "Task 'A' appears 3 times and task 'B' appears 3 times. Since there is a cooldown of 2, we need to ensure that after every 'A' there are at least 2 other tasks or idle intervals before we can add another 'A'. The same applies to 'B'. A valid sequence might look like this: 'A' -> 'B' -> idle -> 'A' -> 'B' -> idle -> 'A' -> 'B'. Thus, the total number of intervals required is 8.",
+  },
+  {
+    input: [
+      ["tasks", ["A", "C", "A", "B", "D", "B"]],
+      ["k", 1],
+    ],
+    output: 6,
+    explanation:
+      "The tasks 'A' and 'B' each appear twice, but the cooldown is only 1. After completing one 'A', we can immediately complete another 'A' after just one other task. A valid sequence could look like this: 'A' -> 'C' -> 'A' -> 'B' -> 'D' -> 'B'. Thus, the total number of intervals required is 6.",
+  },
+  {
+    input: [
+      ["tasks", ["A", "A", "A", "B", "B", "B"]],
+      ["k", 3],
+    ],
+    output: 10,
+    explanation:
+      "The cooldown is 3, meaning after completing a task, we must wait for 3 intervals before repeating the same task. A valid sequence could be: 'A' -> 'B' -> idle -> idle -> 'A' -> 'B' -> idle -> idle -> 'A' -> 'B'. Thus, the total number of intervals needed is 10.",
+  },
+];
+
+describe("taskCoordinator", () => {
+  (runTestCases as any[]).forEach((example: any) => {
+    test(`tasks = [${example.input[0][1]}] k = ${example.input[1][1]}`, () => {
+      expect(fn(example.input[0][1], example.input[1][1])).toStrictEqual(
+        example.output,
+      );
+    });
+  });
+});

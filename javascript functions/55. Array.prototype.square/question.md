@@ -1,0 +1,28 @@
+# Array.prototype.square
+
+**Difficulty:** Easy
+
+## Description
+
+Implement a custom `Array` function, `Array.prototype.square()`, which creates a **new** array with the results of squaring every element in the array that `.square()` is called on.
+
+## Examples
+
+```js
+[-2].square(); // [4]
+[1, 2, 3, 4].square(); // [1, 4, 9, 16]
+```
+
+## Notes
+
+- The original array should not be modified.
+- Assume that the array only contains numbers.
+- Assume that the array will not be sparse, e.g. `[1, 2, , 4]`.
+
+## Files
+
+| File | Contents |
+| --- | --- |
+| `array-square.ts` | Starter code |
+| `tests.ts` | Unit tests |
+| `solution.md` | Solution write-up and code |
