@@ -1,0 +1,10 @@
+{
+  "name": "@gfe-questions/file-explorer-svelte-solution",
+  "version": "0.0.1",
+  "private": true,
+  "author": "yangshun",
+  "main": "src/index.js",
+  "dependencies": {
+    "svelte": "5.57.3"
+  }
+}

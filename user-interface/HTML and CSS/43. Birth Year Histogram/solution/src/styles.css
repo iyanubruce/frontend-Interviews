@@ -1,0 +1,85 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.status {
+  min-height: 1.2em;
+}
+
+.chart {
+  --axis-color: #000;
+  --bar-color: rebeccapurple;
+  --bars-gap: 16px;
+  display: flex;
+  height: 300px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.chart__y-axis {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+}
+
+.chart__y-axis__items {
+  align-items: center;
+  border-right: 1px solid var(--axis-color);
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  margin-bottom: 8px;
+}
+
+.chart__y-axis__item {
+  flex-grow: 1;
+  transform: translateY(-8px);
+}
+
+.chart__y-axis__zero {
+  text-align: center;
+  transform: translateY(-16px);
+}
+
+.chart__main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.chart__main__bars {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--axis-color);
+  display: flex;
+  flex-grow: 1;
+  gap: var(--bars-gap);
+  padding: 0 var(--bars-gap);
+}
+
+.chart__main__bars__item {
+  background-color: var(--bar-color);
+  flex-grow: 1;
+}
+
+.chart__x-axis {
+  display: flex;
+  gap: var(--bars-gap);
+  justify-content: space-around;
+  padding: 0 var(--bars-gap);
+}
+
+.chart__x-axis__item {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+}

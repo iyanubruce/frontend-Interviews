@@ -1,0 +1,9 @@
+{
+  "name": "@gfe-questions/accordion-iii-svelte-solution",
+  "version": "0.0.1",
+  "author": "tanhauhau",
+  "main": "src/index.js",
+  "dependencies": {
+    "svelte": "5.57.3"
+  }
+}

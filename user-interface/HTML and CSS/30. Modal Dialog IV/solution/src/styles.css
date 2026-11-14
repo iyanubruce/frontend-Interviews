@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+}
+
+.modal-overlay {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 20px;
+  position: fixed;
+}
+
+.modal {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+input,
+textarea {
+  display: block;
+  font-family: sans-serif;
+  padding: 8px;
+}
+
+*:focus {
+  outline: 2px solid red;
+  outline-offset: 1px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

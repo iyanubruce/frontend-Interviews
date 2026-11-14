@@ -1,0 +1,20 @@
+<div class="app">
+  <div aria-live="polite">
+    {{ statusMessage }}
+  </div>
+  <div class="board">
+    <button
+      *ngFor="let cellIndex of [0, 1, 2, 3, 4, 5, 6, 7, 8]"
+      [attr.aria-label]="
+        board[cellIndex] == null
+          ? 'Mark cell ' + (cellIndex + 1) + ' as ' + turn
+          : 'Cell ' + (cellIndex + 1) + ': ' + board[cellIndex]
+      "
+      class="cell"
+      [disabled]="board[cellIndex] != null || winner != null"
+      (click)="onCellClick(cellIndex)">
+      <span aria-hidden="true">{{ board[cellIndex] }}</span>
+    </button>
+  </div>
+  <button (click)="onResetClick()">Reset</button>
+</div>

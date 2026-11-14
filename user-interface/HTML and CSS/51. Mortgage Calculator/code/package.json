@@ -1,0 +1,14 @@
+{
+  "name": "@gfe-questions/mortgage-calculator-vanilla-skeleton",
+  "version": "0.0.1",
+  "private": true,
+  "author": "dhillon",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "2.9.3"
+  }
+}

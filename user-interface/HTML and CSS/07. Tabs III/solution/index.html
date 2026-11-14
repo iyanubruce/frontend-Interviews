@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <button>A focusable element</button>
+      <div class="tabs" id="tabs">
+        <div class="tabs-list" role="tablist">
+          <button
+            class="tabs-list-item tabs-list-item--active"
+            id="tabs-tab-html"
+            role="tab"
+            aria-controls="tabs-panel-html"
+            aria-selected="true"
+            tabindex="0">
+            HTML
+          </button>
+          <button
+            class="tabs-list-item"
+            id="tabs-tab-css"
+            role="tab"
+            aria-controls="tabs-panel-css"
+            aria-selected="false"
+            tabindex="-1">
+            CSS
+          </button>
+          <button
+            class="tabs-list-item"
+            id="tabs-tab-javascript"
+            role="tab"
+            aria-controls="tabs-panel-javascript"
+            aria-selected="false"
+            tabindex="-1">
+            JavaScript
+          </button>
+        </div>
+        <div
+          id="tabs-panel-html"
+          role="tabpanel"
+          aria-labelledby="tabs-tab-html"
+          tabindex="0">
+          The HyperText Markup Language or HTML is the standard markup language
+          for documents designed to be displayed in a web browser.
+        </div>
+        <div
+          id="tabs-panel-css"
+          role="tabpanel"
+          aria-labelledby="tabs-tab-css"
+          tabindex="0"
+          hidden>
+          Cascading Style Sheets is a style sheet language used for describing
+          the presentation of a document written in a markup language such as
+          HTML or XML.
+        </div>
+        <div
+          id="tabs-panel-javascript"
+          role="tabpanel"
+          aria-labelledby="tabs-tab-javascript"
+          tabindex="0"
+          hidden>
+          JavaScript is one of the core technologies of the World Wide Web.
+        </div>
+      </div>
+      <button>Some other focusable element</button>
+    </div>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

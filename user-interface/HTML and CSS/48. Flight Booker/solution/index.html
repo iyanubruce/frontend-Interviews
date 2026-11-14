@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form class="flight-booker">
+      <label>
+        Flight type
+        <select name="flight-type">
+          <option value="one-way">One-way flight</option>
+          <option value="round-trip">Round-trip flight</option>
+        </select>
+      </label>
+      <label>
+        Departure date
+        <input name="departure" required type="date" />
+      </label>
+      <label id="return-date-field" hidden>
+        Return date
+        <input name="return" required type="date" />
+      </label>
+      <button type="submit">Book</button>
+    </form>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

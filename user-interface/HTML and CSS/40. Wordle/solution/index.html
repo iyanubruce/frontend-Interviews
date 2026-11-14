@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle</title>
+  </head>
+  <body>
+    <main class="root">
+      <h1 class="title">Wordle</h1>
+      <div id="result" class="result-row" aria-live="polite"></div>
+      <section
+        id="grid"
+        class="grid-section"
+        aria-label="Word guesses"></section>
+      <section
+        id="keyboard"
+        class="keyboard-section"
+        aria-label="On-screen keyboard"></section>
+    </main>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

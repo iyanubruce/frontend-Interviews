@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack-A-Mole</title>
+  </head>
+  <body>
+    <main class="app">
+      <div class="header">
+        <button id="start" class="start-button" type="button">
+          Start Game
+        </button>
+        <div id="round-information" class="round-information" hidden>
+          <p id="score" aria-live="polite">Score: 0</p>
+          <button id="play-again" class="start-button" type="button" hidden>
+            Play again
+          </button>
+          <p id="time-left" aria-live="polite">Time Left: 15</p>
+        </div>
+      </div>
+      <div id="grid" class="grid" aria-label="Whack-A-Mole board"></div>
+    </main>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

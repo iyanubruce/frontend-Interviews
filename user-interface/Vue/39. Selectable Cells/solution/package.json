@@ -1,0 +1,9 @@
+{
+  "name": "@gfe-questions/selectable-cells-vue-solution",
+  "version": "0.0.1",
+  "private": true,
+  "main": "/src/main.js",
+  "dependencies": {
+    "vue": "3.5.44"
+  }
+}

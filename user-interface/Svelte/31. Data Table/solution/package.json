@@ -1,0 +1,10 @@
+{
+  "name": "@gfe-questions/data-table-svelte-solution",
+  "version": "0.0.1",
+  "private": true,
+  "author": "yangshun",
+  "main": "src/index.js",
+  "dependencies": {
+    "svelte": "5.57.3"
+  }
+}

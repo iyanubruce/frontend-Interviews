@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form class="dice-form">
+        <div>
+          <label for="dice-input">Number of dice</label
+          ><input
+            id="dice-input"
+            name="dice-count"
+            required
+            type="number"
+            min="1"
+            max="12"
+            step="1" />
+        </div>
+        <button type="submit">Roll</button>
+      </form>
+      <div class="dice-list" hidden role="status" aria-live="polite"></div>
+    </div>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

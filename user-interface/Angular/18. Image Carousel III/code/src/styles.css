@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.image-carousel {
+  background-color: #000;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  width: min(600px, 100vw);
+}
+
+.image-carousel__image {
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+}
+
+.image-carousel__button {
+  --size: 40px;
+  background-color: #0008;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  height: var(--size);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--size);
+}
+
+.image-carousel__button:hover {
+  background-color: #000b;
+}
+
+.image-carousel__button--prev {
+  left: 16px;
+}
+
+.image-carousel__button--next {
+  right: 16px;
+}
+
+.image-carousel__pages {
+  background-color: #0008;
+  border-radius: 12px;
+  bottom: 24px;
+  display: inline-flex;
+  gap: 8px;
+  left: 50%;
+  padding: 8px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.image-carousel__pages__button {
+  background-color: #666;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 8px;
+  padding: 0;
+  width: 8px;
+}
+
+.image-carousel__pages__button:hover {
+  background-color: #ccc;
+}
+
+.image-carousel__pages__button--active {
+  background-color: #fff;
+}

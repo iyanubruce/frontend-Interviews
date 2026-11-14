@@ -1,0 +1,43 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">
+        <button type="button" (click)="sortBy(column.key)">
+          {{ column.label }}
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of pageData">
+      <td *ngFor="let column of columns">
+        {{ column.renderCell(item) }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<div class="pagination">
+  <select aria-label="Page size" (change)="changePageSize($event)">
+    <option *ngFor="let size of pageSizes" [value]="size">
+      Show {{ size }}
+    </option>
+  </select>
+  <div class="pages">
+    <button type="button" [disabled]="page <= 1" (click)="page = page - 1">
+      Prev
+    </button>
+    <span *ngIf="totalPages === 0">0 pages</span>
+    <span *ngIf="totalPages > 0" aria-label="Page number">
+      Page {{ page }} of {{ totalPages }}
+    </span>
+    <button
+      type="button"
+      [disabled]="totalPages === 0 || page >= totalPages"
+      (click)="page = page + 1">
+      Next
+    </button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form class="app">
+      <input id="search" aria-label="Search users" placeholder="Search" />
+      <div class="middle-row">
+        <select
+          id="users"
+          class="users-list"
+          size="5"
+          aria-label="Users"></select>
+        <div class="inputs">
+          <label>First Name: <input id="first" /></label
+          ><label>Last Name: <input id="last" /></label>
+        </div>
+      </div>
+      <div class="buttons">
+        <button data-action="create" type="submit">Create</button>
+        <button data-action="update" type="submit">Update</button>
+        <button data-action="delete" type="submit">Delete</button>
+        <button data-action="cancel" type="submit">Cancel</button>
+      </div>
+    </form>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

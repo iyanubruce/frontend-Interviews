@@ -1,0 +1,41 @@
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar {
+  background: #ccc;
+  height: 8px;
+}
+
+.bar__fill {
+  background: green;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.bar__fill--running {
+  animation: fill 2000ms linear forwards;
+}
+
+.bar__fill--complete {
+  transform: scaleX(1);
+}
+
+@keyframes fill {
+  to {
+    transform: scaleX(1);
+  }
+}

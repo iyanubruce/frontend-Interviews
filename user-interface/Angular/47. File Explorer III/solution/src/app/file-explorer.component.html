@@ -1,0 +1,18 @@
+<ul class="file-list">
+  <li
+    *ngFor="let row of rows; trackBy: trackByPath"
+    class="file-item"
+    [style.padding-left.px]="(row.level - 1) * 16">
+    <button
+      *ngIf="isDirectory(row.file); else fileLabel"
+      type="button"
+      class="file-item-button file-item-button--directory"
+      (click)="toggle(row)">
+      <span>{{ row.file.name }}</span>
+      [{{ isExpanded(row.path) ? '-' : '+' }}]
+    </button>
+    <ng-template #fileLabel>
+      <span class="file-item-button">{{ row.file.name }}</span>
+    </ng-template>
+  </li>
+</ul>

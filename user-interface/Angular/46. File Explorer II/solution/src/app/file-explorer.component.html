@@ -1,0 +1,41 @@
+<div *ngIf="root; else childList" aria-label="Files Explorer" role="tree">
+  <ng-container *ngTemplateOutlet="list"></ng-container>
+</div>
+
+<ng-template #childList>
+  <ng-container *ngTemplateOutlet="list"></ng-container>
+</ng-template>
+
+<ng-template #list>
+  <ul class="file-list" role="group">
+    <li
+      *ngFor="let file of items; let index = index"
+      class="file-item"
+      role="treeitem"
+      [attr.aria-expanded]="isDirectory(file) ? isExpanded(index) : null"
+      [attr.aria-labelledby]="labelId(index)"
+      [attr.aria-level]="level"
+      [attr.aria-posinset]="index + 1"
+      [attr.aria-setsize]="items.length">
+      <button
+        type="button"
+        class="file-item-button"
+        [class.file-item-button--directory]="isDirectory(file)"
+        (click)="toggle(file, index)">
+        <span [id]="labelId(index)">{{ file.name }}</span>
+        <ng-container *ngIf="isDirectory(file)">
+          [{{ isExpanded(index) ? '-' : '+' }}]
+        </ng-container>
+      </button>
+
+      <app-file-explorer
+        *ngIf="
+          isDirectory(file) && file.children!.length > 0 && isExpanded(index)
+        "
+        [data]="file.children!"
+        [level]="level + 1"
+        [path]="itemPath(index)"
+        [root]="false"></app-file-explorer>
+    </li>
+  </ul>
+</ng-template>

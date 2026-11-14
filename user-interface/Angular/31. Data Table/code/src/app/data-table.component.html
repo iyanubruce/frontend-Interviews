@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">{{ column.label }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.occupation }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TODO: Add pagination state and controls. -->

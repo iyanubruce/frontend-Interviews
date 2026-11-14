@@ -1,0 +1,59 @@
+# Accordion III
+
+**Difficulty:** Medium · **Duration:** ~20 min · **Topics:** A11y
+
+> Source: [accordion-iii](https://www.greatfrontend.com/questions/user-interface/accordion-iii/angular)
+
+## Description
+
+**Note:** This is an advanced version of [Accordion II](https://www.greatfrontend.com/questions/user-interface/accordion-ii), and you should complete that question first before attempting this question. The keyboard interactions require careful focus management regardless of framework.
+
+In [Accordion II](https://www.greatfrontend.com/questions/user-interface/accordion-ii), we built a functional accordion component that has the necessary [WAI-ARIA roles, states, and properties](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/), which is actually pretty accessible. However, we can go one step further and add some optional keyboard interactions.
+
+### Requirements
+
+We'll be following a modified subset of the [necessary keyboard interactions for accordions](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/):
+
+- When <kbd>Enter</kbd> or <kbd>Space</kbd> is pressed while focus is on the accordion header
+  - For a collapsed panel, expands the associated panel.
+  - For an expanded panel, collapses the associated panel.
+- <kbd>Tab</kbd>: Moves focus to the next focusable element; all focusable elements in the accordion are included in the page <kbd>Tab</kbd> sequence.
+- <kbd>Shift</kbd> + <kbd>Tab</kbd>: Moves focus to the previous focusable element; all focusable elements in the accordion are included in the page <kbd>Tab</kbd> sequence.
+- <kbd>Down Arrow</kbd>: If focus is on an accordion header, moves focus to the next accordion header. If focus is on the last accordion header, either does nothing or moves focus to the first accordion header.
+- <kbd>Up Arrow</kbd>: If focus is on an accordion header, moves focus to the previous accordion header. If focus is on the first accordion header, either does nothing or moves focus to the last accordion header.
+- <kbd>Home</kbd>: When focus is on an accordion header, moves focus to the first accordion header.
+- <kbd>End</kbd>: When focus is on an accordion header, moves focus to the last accordion header.
+
+### Notes
+
+- The focus of this question is on adding keyboard functionality, not the styling. We have provided the solution to [Accordion II](https://www.greatfrontend.com/questions/user-interface/accordion-ii) here for you to build on top of. You can reuse the existing styling.
+
+## Project structure
+
+```
+├── src
+│   ├── app
+│   │   ├── accordion
+│   │   │   ├── accordion.component.css
+│   │   │   ├── accordion.component.html
+│   │   │   └── accordion.component.ts
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+├── angular.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+```
+
+- `code/` – starter files for the question.
+- `solution/` – reference solution files.
+
+## Asked at these companies
+
+- Amazon

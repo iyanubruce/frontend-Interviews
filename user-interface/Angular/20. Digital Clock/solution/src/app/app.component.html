@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <time
+    class="clock"
+    [dateTime]="dateTimeDisplay"
+    [attr.aria-label]="'Current time: ' + dateTimeDisplay">
+    <app-digit aria-hidden="true" [number]="hours / 10 | floor"></app-digit>
+    <app-digit aria-hidden="true" [number]="hours % 10 | floor"></app-digit>
+
+    <app-separator aria-hidden="true"></app-separator>
+
+    <app-digit aria-hidden="true" [number]="minutes / 10 | floor"></app-digit>
+    <app-digit aria-hidden="true" [number]="minutes % 10 | floor"></app-digit>
+
+    <app-separator aria-hidden="true"></app-separator>
+
+    <app-digit aria-hidden="true" [number]="seconds / 10 | floor"></app-digit>
+    <app-digit aria-hidden="true" [number]="seconds % 10 | floor"></app-digit>
+  </time>
+</div>

@@ -1,0 +1,8 @@
+{
+  "name": "@gfe-questions/signup-form-vue-solution",
+  "version": "0.0.1",
+  "main": "/src/main.js",
+  "dependencies": {
+    "vue": "3.5.44"
+  }
+}

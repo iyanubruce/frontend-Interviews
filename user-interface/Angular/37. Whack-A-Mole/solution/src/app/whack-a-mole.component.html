@@ -1,0 +1,48 @@
+<div class="app">
+  <div class="header">
+    <ng-container *ngIf="score === null; else gamePanel">
+      <button class="start-button" type="button" (click)="startGame.emit()">
+        Start Game
+      </button>
+    </ng-container>
+    <ng-template #gamePanel>
+      <div class="round-information">
+        <p aria-live="polite">Score: {{ score }}</p>
+        <button
+          *ngIf="!running"
+          class="start-button"
+          type="button"
+          (click)="startGame.emit()">
+          Play again
+        </button>
+        <p aria-live="polite">Time left: {{ timeLeft }}</p>
+      </div>
+    </ng-template>
+  </div>
+  <div
+    class="grid"
+    [style.grid-template-columns]="'repeat(' + gameConfig.cols + ', 1fr)'"
+    [style.grid-template-rows]="'repeat(' + gameConfig.rows + ', 1fr)'">
+    <button
+      [attr.aria-label]="
+        visible.has(i)
+          ? 'Whack mole in hole ' + (i + 1)
+          : 'Empty hole ' + (i + 1)
+      "
+      (click)="whackMole.emit(i)"
+      class="grid__cell"
+      [disabled]="!running"
+      type="button"
+      *ngFor="let i of indexes">
+      <img
+        src="https://www.greatfrontend.com/img/questions/whack-a-mole/mole-head.webp"
+        alt=""
+        class="grid__cell-contents mole-head"
+        [ngClass]="visible.has(i) ? 'mole-head--visible' : ''" />
+      <img
+        src="https://www.greatfrontend.com/img/questions/whack-a-mole/mole-hill.webp"
+        alt=""
+        class="grid__cell-contents mole-hill" />
+    </button>
+  </div>
+</div>

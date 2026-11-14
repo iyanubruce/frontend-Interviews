@@ -1,0 +1,9 @@
+{
+  "name": "@gfe-questions/progress-bars-ii-svelte-skeleton",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {
+    "svelte": "5.57.3"
+  }
+}

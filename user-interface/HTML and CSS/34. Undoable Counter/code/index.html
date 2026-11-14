@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div>
+      <div class="row">
+        <button data-action="undo">Undo</button
+        ><button data-action="redo">Redo</button
+        ><button data-action="reset">Reset</button>
+      </div>
+      <hr />
+      <div class="row">
+        <button data-operation="/2">/2</button
+        ><button data-operation="-1">-1</button
+        ><output class="counter">0</output
+        ><button data-operation="+1">+1</button
+        ><button data-operation="x2">x2</button>
+      </div>
+      <hr />
+      <div class="row">
+        <table hidden>
+          <thead>
+            <tr>
+              <th>Operation</th>
+              <th>Old</th>
+              <th>New</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

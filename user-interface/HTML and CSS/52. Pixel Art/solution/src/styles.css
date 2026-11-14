@@ -1,0 +1,73 @@
+body {
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
+
+.grid__row {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.grid__cell {
+  --cell-size: 20px;
+  background-color: transparent;
+  border: 0;
+  flex-shrink: 0;
+  height: var(--cell-size);
+  padding: 0;
+  width: var(--cell-size);
+}
+
+.grid__cell:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+  position: relative;
+}
+
+.grid__row--even .grid__cell:nth-child(odd),
+.grid__row--odd .grid__cell:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+.toolbar {
+  display: flex;
+  gap: 20px;
+}
+
+.toolbar__mode {
+  background-color: transparent;
+  border: 2px solid #000;
+  font-size: 14px;
+  height: 36px;
+}
+
+.toolbar__mode--selected {
+  background-color: #000;
+  color: #fff;
+}
+
+.toolbar__color-picker {
+  display: flex;
+}
+
+.toolbar__color {
+  border: 2px solid transparent;
+  height: 20px;
+  padding: 0;
+  width: 20px;
+}
+
+.toolbar__color--selected {
+  border-color: #000;
+}

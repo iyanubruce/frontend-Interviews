@@ -1,0 +1,14 @@
+{
+  "name": "@gfe-questions/tic-tac-toe-ii-vanilla-skeleton",
+  "version": "0.0.1",
+  "private": true,
+  "author": "yangshun",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "2.9.3"
+  }
+}

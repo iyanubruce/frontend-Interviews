@@ -1,0 +1,29 @@
+<div class="grid" aria-label="Pixel art canvas" role="group">
+  <div
+    *ngFor="let row of grid; let rowIndex = index; trackBy: trackByFn"
+    [ngClass]="{
+      grid__row: true,
+      'grid__row--even': rowIndex % 2 === 0,
+      'grid__row--odd': rowIndex % 2 !== 0,
+    }">
+    <button
+      *ngFor="let cell of row; let cellIndex = index; trackBy: trackByFn"
+      [attr.aria-label]="
+        'Pixel row ' +
+        (rowIndex + 1) +
+        ', column ' +
+        (cellIndex + 1) +
+        ', ' +
+        (cell.color || 'empty')
+      "
+      [attr.aria-pressed]="cell.color !== null"
+      (click)="onMark(rowIndex, cellIndex)"
+      (pointerdown)="onPointerDown($event, rowIndex, cellIndex)"
+      (pointerenter)="isDragging ? onMark(rowIndex, cellIndex) : null"
+      [ngStyle]="{
+        'background-color': cell.color ? COLORS[cell.color] : undefined,
+      }"
+      class="grid__cell"
+      type="button"></button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<ul class="file-list">
+  <li *ngFor="let file of items; let index = index" class="file-item">
+    <button
+      type="button"
+      class="file-item-button"
+      [class.file-item-button--directory]="isDirectory(file)"
+      (click)="toggle(file, index)">
+      <span>{{ file.name }}</span>
+      <ng-container *ngIf="isDirectory(file)">
+        [{{ isExpanded(index) ? '-' : '+' }}]
+      </ng-container>
+    </button>
+
+    <app-file-explorer
+      *ngIf="
+        isDirectory(file) && file.children!.length > 0 && isExpanded(index)
+      "
+      [data]="file.children!"
+      [level]="level + 1"
+      [path]="itemPath(index)"></app-file-explorer>
+  </li>
+</ul>
